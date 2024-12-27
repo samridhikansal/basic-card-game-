@@ -1,6 +1,8 @@
 from enum import Enum
 from enum import IntEnum
 from random import randint
+from index import instructions
+from shuffle import shuffleDeck
 
 class Card:
   def __init__(self, suit, value):
@@ -38,15 +40,26 @@ def createDeck():
             deck.append(Card(Suit(suit), Value(value)))
     return deck
 
-#function to draw a sinle card from the deck of cards 
+#function to draw a single card from the deck of cards 
 def drawCard(deck):
-   randomCard = randint(0, len(deck)-1)
+   randomCard = randint(0,len(deck)-1)
    print(deck.pop(randomCard).suit)
-   print(deck.pop(randomCard)).value
+   print(deck.pop(randomCard).value)
    return deck.pop(randomCard)
-   
+
+# calling the function instructions that has all the instructions to play the game. 
+instructions() 
+#creating dealing the entire deck of cards  
 createDeck()
-drawCard(deck)
+# Asking the user if they want to shuffle the cards 
+
+choice = int(input("\nEnter 1 if you want to shuffle the deck of cards before you draw"))
+if choice == 1:
+  shuffleDeck(deck)
+  print("The deck is shuffled")
+else:
+  print("Cont wihout reshuffle")
+  #drawCard(deck)
 
 
   

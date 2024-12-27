@@ -1,9 +1,5 @@
 import random
-from card import Card
-
-cardColor = Card.color
-cardType = Card.type
-cardNumber = Card.number
+from card import deck
 
 
 print ("Welcome to the card game!")
@@ -27,4 +23,5 @@ print(computerNumber)
 
 computerFinal = Card(computerColor, computerNumber,computerType)
 userFinal = Card(userColor, userNumber, userType)
+
 
